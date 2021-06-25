@@ -1,0 +1,422 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --primary-color: rgb(67, 86, 194);
+  --secondary-color: #1b206e;
+}
+
+/* BASE STYLES */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-family:sans-serif;
+  color: #111;
+
+}
+h1 {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+p {
+  margin: 20px 0 10px 0;
+  font-size: 1.1rem;
+}
+
+section{
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  padding: 100px;
+  margin-top: 60px;
+}
+
+section.home {
+  flex-direction: row;
+  margin-top: 0;
+}
+
+section.serv {
+  flex-direction: column;
+}
+
+/* button */
+.btn {
+  cursor: pointer;
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  padding: 10px 30px;
+  margin: 20px 0;
+  border-radius: 8px;
+}
+.btn:hover {
+  color: rgb(255, 255, 255);
+  transform: scale(.95);
+}
+
+.logo {
+  position: absolute; /*this moves the trendy wears with the help of top and left*/
+  top: 30px;
+  left: 100px;
+  font-size: 2rem;
+  font-weight: 700;
+  z-index: 20;
+}
+/* Toggle */
+
+.toggle {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background-size: 40px;
+  background: white url(icons8-menu-48.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor:pointer;
+  z-index: 20;
+  border: 0;
+  border-radius: 5px;
+}
+
+.toggle.active {
+  background: white url(close.png);
+  background-size: 25px;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor:pointer;
+  z-index: 20;
+  border: 0;
+}
+.toggle.active:hover {
+  color:red;
+  transform: scale(.95);
+}
+/* NAVIGATION */
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 15;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navigation.active {
+  left: 0;
+}
+
+.navigation ul {
+  position: relative;
+}
+.navigation ul li {
+  
+  position: relative;
+  list-style: none;
+  text-align: center;
+}
+
+.navigation ul li a {
+  font-size: 2.2rem;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-weight: 300;
+}
+.navigation li a:hover {
+  transform: scale(.95);
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 300;
+}
+
+.navigation .social-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navigation .social-bar a {
+ display: inline-block;
+ transform: scale(0.7);
+}
+
+
+/* Homepage */
+.home-content {
+  position: relative;
+  z-index: 10;
+  max-width: 600px;
+}
+
+.home-img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  height: 110%;
+}
+
+/* SERVICES */
+
+.services {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+  text-align: center;
+}
+.services .service {
+  padding: 30px;
+  background-color: var(--primary-color);
+  border-radius: 12px;
+}
+
+.services .service:hover {
+  box-shadow: 10px 10px 10px rgb(105, 100, 100);
+  cursor: pointer;
+}
+
+.services .service h2 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-top: 20px;
+  color: #f7f7f7;
+}
+.services .service p {
+  font-weight: 300;
+  color: #f7f7f7;
+}
+
+
+.services .service .icon img{
+  justify-content: center;
+  max-width: 100%;
+}
+
+.services .service:hover {
+  transform: scale(.95);
+ transition: 5ms;
+}
+
+
+/* WORK PAGE */
+
+.portfolio {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.portfolio .item {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 5px;
+}
+
+.portfolio .item img {
+  max-width: 100%;
+}
+
+.portfolio .item .action {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.portfolio .item:hover .action {
+  opacity: 1;
+}
+
+.portfolio .item .action a {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  border: 1px solid #fff;
+  padding: 5px 15px
+}
+
+
+
+
+/* CONTACT */
+
+.contact {
+  position: relative;
+  width: 100%;
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.contact-form {
+  position: relative;
+  background: #f9f9f9;
+  width: calc(100%-40px);
+  padding: 60px 40px 20px;
+}
+
+.contact-form form {
+  width: 100%;
+}
+
+.contact-form .row {
+  width: 100%;
+  display: flex;
+}
+
+.contact-form .input50 {
+  width: 50%;
+  margin: 0 10px;
+}
+
+.contact-form .input100 {
+  width: 100%;
+  margin: 0 10px;
+}
+
+.contact-form .row input,
+.contact-form .row textarea {
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: #111;
+  background: transparent;
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  font-size: 16px;
+  font-weight: 300;
+  margin: 10px 0;
+  resize: none;
+}
+.contact-form .row textarea {
+  height: 150px;
+}
+
+.contact-form .row input[type='submit'] {
+  background-color: #1b206e;
+  color: #fff;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 300;
+  border: 0;
+  cursor: pointer;
+}
+
+.contact-info {
+  width: 350px;
+  background-color: #f9f9f9;
+  padding: 60px 40px 20px;
+}
+
+.contact-info .info-box {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 40px;
+}
+
+.contact-info .info-box .contact-icon {
+  width: 40px;
+  margin-right: 40px;
+}
+
+.contact-info .info-box .details h4 {
+  color: #1b206e;
+}
+
+.contact-info .info-box .details p,
+.contact-info .info-box .details a {
+  color: #111;
+}
+
+
+
+@media(max-width: 1068px) {
+  .home-img {
+    display: none;
+  }
+  .logo {
+    top: 10px;
+    left: 40px;
+    font-size: 1.5rem;
+  }
+  .section {
+    padding: 100px 40px;
+  }
+  .navigation ul li a {
+    font: 1.5rem;
+  }
+  .services {
+    grid-template-columns: 1fr 1fr;
+  }
+  .portfolio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .contact {
+    flex-direction: column;
+  }
+  
+  .contact-form {
+    width: 100%;
+    padding: 30px 30px 20px;
+  }
+  .contact-form .row {
+    flex-direction: column;
+  }
+
+  .contact-form .input50,
+  .contact-form .input100 {
+    width: 100%;
+    margin: 0%;
+  }
+
+  .contact-info {
+    width: 100%;
+    margin-top: 20px;
+    padding: 30px 30px 20px;
+  }
+}
+@media (max-width: 768px) {
+  .services {
+    grid-template-columns: 1fr;
+  }
+  .portfolio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .services .service {
+    box-shadow: 10px 10px 10px rgb(105, 100, 100);
+    cursor: pointer;
+  }
+}
